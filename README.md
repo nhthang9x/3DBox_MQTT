@@ -15,8 +15,14 @@ Step 3: `sudo docker build -t 3dbox .`
 
 Step 4: `xhost +`
 
-Step 5: `sudo docker run -it --rm --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --env="DISPLAY" -e QT_X11_NO_MITSHM=1 --device=/dev/video0:/dev/video0 3dbox /bin/bash`   
+Step 5: `sudo docker run -it --rm --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --env="DISPLAY" -e QT_X11_NO_MITSHM=1 --device=/dev/video0:/dev/video0 --network=host 3dbox /bin/bash`   
 
-Step 6: Running my code by python/python3 webcam.py
+Step 6: Running the publisher by `python/python3 webcam.py`
 
-After Step 5, you can see that webcam/camera in your device is operated, and can detect blue box if it appeared in front of your camera/device
+Step 7: Opening other terminal, finding out docker container ID by `sudo docker ps`
+
+Step 8: Running into docker container: `sudo docker exec -it CONTAINER_ID bash`
+
+Step 9: Running the subscriber by `streamlit run subscribe.py`
+
+Step 10: Clicking the link appearing in this terminal. Done
