@@ -8,6 +8,9 @@ camera:
   fps: 2  
   mqtt_topic: homie/mac_webcam/capture
 
+publisher_1:
+  mqtt_topic: homie/mac_webcam/release
+
 processing:
   subscribe_topic: homie/mac_webcam/capture
   publish_topic: homie/mac_webcam/capture/rotated

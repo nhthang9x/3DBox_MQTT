@@ -110,6 +110,7 @@ def test(opt):
         output_image = pil_image_to_byte_array(output_image)
 
         client.publish(topic=MQTT_TOPIC_CAMERA, payload=output_image, qos=MQTT_QOS)
+        print("Thang Nguyen")
 
         now = get_now_string()
         print(f"published frame on topic: {MQTT_TOPIC_CAMERA} at {now}")
