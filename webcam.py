@@ -50,7 +50,7 @@ def test(opt):
     # if torch.cuda.is_available():
     #     model.cuda()
 
-    input_video = cv2.VideoCapture(0)
+    input_video = cv2.VideoCapture("sample_video_box_10.mp4")
     # input_video.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     # input_video.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
