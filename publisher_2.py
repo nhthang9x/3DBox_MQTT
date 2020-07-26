@@ -98,7 +98,6 @@ def on_message( client, userdata, msg):
         output_image = Image.fromarray(output_image)
         output_image = pil_image_to_byte_array(output_image)
 
-        print(output_image)
         client.publish(MQTT_TOPIC_NEW, output_image, MQTT_QOS)
         now = get_now_string()
         print(f"published frame on topic: {MQTT_TOPIC_NEW} at {now}")
